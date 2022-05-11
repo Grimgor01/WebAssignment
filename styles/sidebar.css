@@ -1,0 +1,38 @@
+/* 
+filename: sidebar.css
+author: Ryan Correia, Elishua Ma, Liam Crook, Senil Hansitha Ravindranath Gunawardena, Alexander Forster
+created:  26/03/2022
+last modified: 9/04/2022
+description: Stylesheet for Group Assignment 
+*/ 
+
+
+#sidebar{
+	text-align: center;
+	width: 10% ;
+	float: left;
+	background-color:#242222; 
+	padding: 0;
+	padding-bottom:100%;
+}
+#sidebar ul{
+	position:fixed;
+	width: 10%;
+	
+	padding: 0;
+	list-style-type:none;
+	
+}
+#sidebar li a {
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	padding-bottom: 15%;
+	padding-top: 15%;
+	font-size: 15px;
+	font-weight: bold;
+}
+#sidebar li a:hover {
+	background-color: #555;
+	
+}
