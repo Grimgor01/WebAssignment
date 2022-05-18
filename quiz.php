@@ -131,7 +131,7 @@
             <input type= "submit" value="Submit"/>
             <input type= "reset" value="Reset Form"/>
         </form>
-		<footer>
+		<!-- <footer>
 			<section class="footer-content">
 				<h3>B*TCH CROC</h3>
 				<p>Group Project for COS10026</p>
@@ -147,7 +147,10 @@
 			</section>
 			<section class="footer-bottom">
 				<p>&#169; Swinburne University of Technology. Designed by <span> B*TCH CROC</span></p>
-			</section>
-		</footer>
+			</section> 
+		</footer> -->
+<?php
+  require 'footer.inc'
+   ?>
     </body>
 </html>
