@@ -13,16 +13,19 @@
 	<link href="styles/responsive.css" rel="stylesheet">
 	
   </head>
-
+<?php
+  require 'header.inc';
+     ?>
 	
 	
 	
-  	<header>
+  	<!-- <header>
 		<a href="https://swinburne.edu.au">
 		<img src="styles/images/logo.png" alt="Swinburne Logo"/>
 		</a>
-		<h1>Streaming Media</h1>
-	</header>
+		<h1>Streaming Media</h1> 
+	</header> -->
+	
 	
  <nav id="navbar">
 			<ul>
