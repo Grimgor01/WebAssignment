@@ -51,10 +51,10 @@
             <fieldset>
                 <legend>User Details</legend>
                 <p><label for="firstName">First Name</label> 
-                        <input type="text" name= "firstName" id="firstName" maxlength="30" size="30" required="required" pattern="[a-zA-Z ]+" />
+                        <input type="text" name= "firstName" id="firstName" maxlength="30" size="30" required="required" pattern="[a-zA-Z- ]+" />
                 </p>
                 <p><label for="lastName">Last Name</label> 
-                    <input type="text" name= "lastName" id="lastName"  maxlength="30" size="30" required="required" pattern="[a-zA-Z ]+" />
+                    <input type="text" name= "lastName" id="lastName"  maxlength="30" size="30" required="required" pattern="[a-zA-Z- ]+" />
                 </p>
                 <p><label for="studentNumber">Student Number</label> 
                     <input type="text" name= "studentNumber" id="studentNumber" maxlength="10" size="30" required="required" pattern="\d{7,10}" />
