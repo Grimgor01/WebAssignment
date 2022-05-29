@@ -10,6 +10,13 @@ $conn = @mysqli_connect($host,
 		$pwd,
 		$sql_db
 		);
+
+
+
+
+
+
+
 function test_input($data) {
    $data = trim($data);
    $data = stripslashes($data);
@@ -96,6 +103,31 @@ function test_input($data) {
         if (!conn) {
             echo "<p>Failed to connect to the database</p>"
         } else{
+		
+		//checks for table existence 
+		$val = 'SELECT 1 FROM quizAnswers';
+		$validate = mysqli_query($conn, $val);
+			if($validate !== false)
+			{
+					echo "Table exists";
+			}
+
+		else {
+			$table = "CREATE TABLE quizAnswers (
+				id INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+				date INT NOT NULL,
+				firstname VARCHAR(40) NOT NULL,
+				lastname VARCHAR(40) NOT NULL,
+				uid INT NOT NULL,
+				attempts INT NOT NULL, 
+				score INT NOT NULL)";
+
+			echo "Table does not exist <br>";
+			echo "Creating table...<br>";
+			$gentable = mysqli_query($conn, $table);
+			echo "Table Created";	
+		}
+
             $sql_table = "quizAnswers";
             $query = "SELECT COUNT(*) from $sql_table where uid like '$studentNumber'";
             $result = mysqli_query($conn, $query);
