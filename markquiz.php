@@ -11,13 +11,6 @@ $conn = @mysqli_connect($host,
 		$sql_db
 		);
 
-function test_input($data) {
-   $data = trim($data);
-   $data = stripslashes($data);
-   $data = htmlspecialchars($data);
-   return $data;
-}
-
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if(empty($_POST["firstName"])) {
 			$err .= "Please enter a valid name";
@@ -25,9 +18,9 @@ function test_input($data) {
 		else {
 			
 			if(!preg_match("/^[a-zA-Z ]*$/",$firstName)) {
-				$err. = "Only letters and white spaces allowed";
+				$err .= "Only letters and white spaces allowed";
 			} else {
-                $firstName = test_input($_POST["firstName"]);
+                $firstName = htmlspecialchars(trim($_POST["firstName"]));
             }
 		}
 	
@@ -39,7 +32,7 @@ function test_input($data) {
 		if(!preg_match("/^[a-zA-Z ]*$/",$lastName)) {
 			$err .= "Only letters and white spaces allowed";
 		} else {
-            $lastName = test_input($_POST["lastName"]);
+            $lastName = htmlspecialchars(trim($_POST["lastName"]));
         }
 	}
 	
@@ -51,7 +44,7 @@ function test_input($data) {
         if(!preg_match("/^[0-9]*$/",$studentNumber)) {
             $err .= "Only numbers allowed";
         } else {
-            $studentNumber = test_input($_POST["studentNumber"]);
+            $studentNumber = htmlspecialchars(trim($_POST["studentNumber"]));
         }
     }
 
@@ -59,35 +52,35 @@ function test_input($data) {
         $err .= "Please enter a valid answer for 'Which of these platforms are the streaming media?' ";
     }
     else {
-        $category = test_input($_POST["category"]);
+        $category = ($_POST["category"]);
     }
 
     if(empty($_POST["textAnswer"])) {
         $err .= "Please enter a valid answer for 'What is the main difference between streaming and live streaming?' ";
     }
     else {
-        $textAnswer = test_input($_POST["textAnswer"]);
+        $textAnswer = htmlspecialchars(trim($_POST["textAnswer"]));
     }
 
     if(empty($_POST["protocol"])) {
         $err .= "Please enter a valid answer for 'What is the most used in streaming media protocol?' ";
     }
     else {
-        $protocol = test_input($_POST["protocol"]);
+        $protocol = ($_POST["protocol"]);
     }
 
     if(empty($_POST["appName"])) {
         $err .= "Please enter a valid answer for 'The most popular subscription streaming services in the world is' ";
     }
     else {
-        $appName = test_input($_POST["appName"]);
+        $appName = ($_POST["appName"]);
     }
 
     if(empty($_POST["favcolor"])) {
         $err .= "Please enter a valid answer for 'Select the theme color of the Twitch' ";
     }
     else {
-        $favcolor = test_input($_POST["favcolor"]);
+        $favcolor = ($_POST["favcolor"]);
     }
 	}
 	
@@ -96,7 +89,7 @@ function test_input($data) {
     } else {
         if (!$conn) {
             echo "<p>Failed to connect to the database</p>";
-        } else {
+        } else{
 		
 		//checks for table existence 
 		$val = 'SELECT 1 FROM quizAnswers';
@@ -109,7 +102,7 @@ function test_input($data) {
 		else {
 			$table = "CREATE TABLE quizAnswers (
 				id INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
-				date INT NOT NULL,
+				date VARCHAR(40) NOT NULL,
 				firstname VARCHAR(40) NOT NULL,
 				lastname VARCHAR(40) NOT NULL,
 				uid INT NOT NULL,
@@ -121,43 +114,54 @@ function test_input($data) {
 			$gentable = mysqli_query($conn, $table);
 			echo "Table Created";	
 		}
-
+			
             $sql_table = "quizAnswers";
-            $query = "SELECT COUNT(*) from $sql_table where uid like '$studentNumber'";
+			
+			$query = "SELECT * from $sql_table where uid = '$studentNumber'";
             $result = mysqli_query($conn, $query);
-            if (!$result) {
-                echo "<p class=\"wrong\">Something is wrong with ", $query, "</p>";
-            } else {
-                if ($result >= 2) {
-                    echo "<p>Maximum amount of attempts have already been used</p>";
-                    
-                } else {
-                    $attempts = $result;
-                    $score = 0;
-                    /* Insert code to mark the quiz and return a score */
-                    $date = date('d/m/Y, h:ia');
-                    $query = "INSERT INTO $sql_table (date, firstname, lastname, uid, score) values ('$date', '$firstName', '$lastName', '$studentNumber', '$score')";
-                    $result = mysqli_query($conn, $query);
-                    if (!$result){
-
-                    } else {
-                        echo "<p>Your information and score: </p>";
+            $attempts = $result->num_rows + 1;
+			$date = date('d/m/Y, h:ia');
+			$score = 0;
+			
+			if ($attempts > 2){
+				echo "<p>Max amount of attempts reached dumbass.</p>";
+			}
+			
+			else{
+			if ($attempts == 2){	
+			$insert = "INSERT INTO $sql_table (date, firstname, lastname, uid, attempts, score) values ('$date', '$firstName', '$lastName', '$studentNumber','$attempts', '$score')";
+			mysqli_query($conn, $insert);
+			
+				echo "<p>Your information and score: </p>";
+						echo "<p>Date: $date</p>";
                         echo "<p>First name: $firstName </p>";
                         echo "<p>Last name: $lastName </p>";
                         echo "<p>Student No.: $studentNumber </p>";
                         echo "<p> Number of attempts: $attempts </p>";
                         echo "<p>You achieved a score of %$score</p>";
-                    
-                    if ($attempts < 2) {
-                        echo "<a href=\"quiz.php\"><input type="Submit" value="Try Again"></a>";
-                    }
-                    }
-                }
-            }
+			}
+			
+			else {
+				$insert = "INSERT INTO $sql_table (date, firstname, lastname, uid, attempts, score) values ('$date', '$firstName', '$lastName', '$studentNumber','$attempts', '$score')";
+			mysqli_query($conn, $insert);
+			
+				echo "<p>Your information and score: </p>";
+						echo "<p>Date: $date</p>";
+                        echo "<p>First name: $firstName </p>";
+                        echo "<p>Last name: $lastName </p>";
+                        echo "<p>Student No.: $studentNumber </p>";
+                        echo "<p> Number of attempts: $attempts </p>";
+                        echo "<p>You achieved a score of %$score</p>";
+						
+						echo "<a href=\"quiz.php\"><input type=\"Submit\" value=\"Try Again\"></a>";
+			}
+			}
+			
+             
             mysqli_close($conn);
         }
         
-    }
+	}
 
 ?>
 
