@@ -94,7 +94,7 @@ function test_input($data) {
 	if ($err != "") {
         echo "<p>$err</p>";
     } else {
-        if (!conn) {
+        if (!$conn) {
             echo "<p>Failed to connect to the database</p>";
         } else {
 		
