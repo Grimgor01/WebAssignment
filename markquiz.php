@@ -117,7 +117,30 @@ $conn = @mysqli_connect($host,
 			
             $sql_table = "quizAnswers";
 		$date = date('d/m/Y, h:ia');
+		
+		
 		$score = 0;	
+		$correctTextAnswer = 'The key difference is that the media when streaming is pre-recorded whereas live streaming meaning that the media is recorded and transmitted simultaneously.';
+		$correctProtocol = 'UDP';
+		$correctAppName = 'Netflix';
+		$correctFavColor = '#6441a5';
+		
+		
+			foreach($category as $key)
+			{
+			   if(($key == 'Netflix' && 'YouTube' && 'Spotify'))
+			   { 
+				  $score = $score + 1;
+			   }
+			}
+		if ($textAnswer == $correctTextAnswer) { $score = $score + 1;}
+		if ($protocol == $correctProtocol) { $score = $score + 1;}
+		if ($appName == $correctAppName) { $score = $score + 1;}
+		if ($favcolor == $correctFavColor) { $score = $score + 1;}
+		
+		$score = $score / 5 * 100 ;
+		
+		
 		
 			$query = "SELECT * from $sql_table where uid = '$studentNumber'";
             $result = mysqli_query($conn, $query);
@@ -141,7 +164,8 @@ $conn = @mysqli_connect($host,
                         echo "<p>Last name: $lastName </p>";
                         echo "<p>Student No.: $studentNumber </p>";
                         echo "<p> Number of attempts: $attempts </p>";
-                        echo "<p>You achieved a score of %$score</p>";
+                        echo "<p>You achieved a score of $score%</p>";
+						
 				
 				echo "<a href=\"index.php\"><input type=\"Submit\" value=\"Return to Page\"></a>";
 			}
@@ -156,7 +180,7 @@ $conn = @mysqli_connect($host,
                         echo "<p>Last name: $lastName </p>";
                         echo "<p>Student No.: $studentNumber </p>";
                         echo "<p> Number of attempts: $attempts </p>";
-                        echo "<p>You achieved a score of %$score</p>";
+                        echo "<p>You achieved a score of $score%</p>";
 						
 						echo "<a href=\"quiz.php\"><input type=\"Submit\" value=\"Try Again\"></a>";
 			}
@@ -169,4 +193,3 @@ $conn = @mysqli_connect($host,
 	}
 
 ?>
-
