@@ -116,12 +116,13 @@ $conn = @mysqli_connect($host,
 		}
 			
             $sql_table = "quizAnswers";
-			
+		$date = date('d/m/Y, h:ia');
+		$score = 0;	
+		
 			$query = "SELECT * from $sql_table where uid = '$studentNumber'";
             $result = mysqli_query($conn, $query);
             $attempts = $result->num_rows + 1;
-			$date = date('d/m/Y, h:ia');
-			$score = 0;
+			
 			
 			if ($attempts > 2){
 				echo "<p>Max amount of attempts reached dumbass.</p>";
