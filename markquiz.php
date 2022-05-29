@@ -3,6 +3,7 @@
 //define variables and set to empty
 $err = "";
 $firstName = $lastName = $studentNumber = $category = $textAnswer = $protocol = $appName = $favcolor = "";
+date_default_timezone_set('Australia/Melboune')
 require_once ("settings.php")
 $conn = @mysqli_connect($host,
 		$user,
@@ -95,8 +96,8 @@ function test_input($data) {
         if (!conn) {
             echo "<p>Failed to connect to the database</p>"
         } else{
-            $sql_table = "";
-            $query = "SELECT COUNT(*) from $sql_table where studentNumber like '$studentNumber'";
+            $sql_table = "quizAnswers";
+            $query = "SELECT COUNT(*) from $sql_table where uid like '$studentNumber'";
             $result = mysqli_query($conn, $query);
             if (!$result) {
                 echo "<p class=\"wrong\">Something is wrong with ", $query, "</p>";
@@ -108,8 +109,8 @@ function test_input($data) {
                     $attempts = $result
                     $score = 0;
                     /* Insert code to mark the quiz and return a score */
-
-                    $query = "INSERT INTO $sql_table (studentNumber, lastName, firstName, score) values ('$studentNumber', '$lastName', '$firstName', '$score')";
+                    $date = date('d/m/Y, h:ia');
+                    $query = "INSERT INTO $sql_table (date, firstname, lastname, uid, score) values ('$date', '$firstName', '$lastName', '$studentNumber', '$score')";
                     $result = mysqli_query($conn, $query);
                     if (!$result){
 
