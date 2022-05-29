@@ -30,14 +30,14 @@
 		
 		<nav id="navbar">
 			<ul>
-				<li><a href="index.html">Index</a></li>
+				<li><a href="index.php">Index</a></li>
 				<li><a class="active">Topic<span>&dtrif;</span></a>
 				<ul>
-					<li><a class="active" href="topic.html">Topic 1</a></li>
-					<li><a href="topic2.html">Topic 2</a></li>
+					<li><a class="active" href="topic.php">Topic 1</a></li>
+					<li><a href="topic2.php">Topic 2</a></li>
 				</ul>
 				</li>
-				<li><a href="quiz.html">Quiz</a></li>
+				<li><a href="quiz.php">Quiz</a></li>
 				<li><a href="enhancements.html">Enhancements</a></li>
 			</ul>
 		</nav>
