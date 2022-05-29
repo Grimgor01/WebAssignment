@@ -149,7 +149,7 @@ function test_input($data) {
                         echo "<p>You achieved a score of %$score</p>";
                     
                     if $attempts < 2 {
-                        echo "<a href="url to page"><input type="Submit" value="Try Again"></a>";
+                        echo "<a href=\"url to page\"><input type="Submit" value="Try Again"></a>";
                     }
                     }
                 }
