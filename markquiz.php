@@ -11,12 +11,6 @@ $conn = @mysqli_connect($host,
 		$sql_db
 		);
 
-
-
-
-
-
-
 function test_input($data) {
    $data = trim($data);
    $data = stripslashes($data);
