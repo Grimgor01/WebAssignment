@@ -3,7 +3,7 @@
 //define variables and set to empty
 $err = "";
 $firstName = $lastName = $studentNumber = $category = $textAnswer = $protocol = $appName = $favcolor = "";
-date_default_timezone_set('Australia/Melboune')
+date_default_timezone_set('Australia/Melbourne');
 require_once ("settings.php");
 $conn = @mysqli_connect($host,
 		$user,
@@ -91,17 +91,17 @@ function test_input($data) {
     }
 	}
 	
-	if $err != "" {
+	if ($err != "") {
         echo "<p>$err</p>";
     } else {
         if (!conn) {
-            echo "<p>Failed to connect to the database</p>"
-        } else{
+            echo "<p>Failed to connect to the database</p>";
+        } else {
 		
 		//checks for table existence 
 		$val = 'SELECT 1 FROM quizAnswers';
 		$validate = mysqli_query($conn, $val);
-			if($validate !== false)
+			if($validate != false)
 			{
 					echo "Table exists";
 			}
@@ -128,11 +128,11 @@ function test_input($data) {
             if (!$result) {
                 echo "<p class=\"wrong\">Something is wrong with ", $query, "</p>";
             } else {
-                if $result >= 2 {
+                if ($result >= 2) {
                     echo "<p>Maximum amount of attempts have already been used</p>";
                     
                 } else {
-                    $attempts = $result
+                    $attempts = $result;
                     $score = 0;
                     /* Insert code to mark the quiz and return a score */
                     $date = date('d/m/Y, h:ia');
@@ -148,8 +148,8 @@ function test_input($data) {
                         echo "<p> Number of attempts: $attempts </p>";
                         echo "<p>You achieved a score of %$score</p>";
                     
-                    if $attempts < 2 {
-                        echo "<a href=\"url to page\"><input type="Submit" value="Try Again"></a>";
+                    if ($attempts < 2) {
+                        echo "<a href=\"quiz.php\"><input type="Submit" value="Try Again"></a>";
                     }
                     }
                 }
