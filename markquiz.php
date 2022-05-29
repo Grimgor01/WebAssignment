@@ -4,7 +4,7 @@
 $err = "";
 $firstName = $lastName = $studentNumber = $category = $textAnswer = $protocol = $appName = $favcolor = "";
 date_default_timezone_set('Australia/Melboune')
-require_once ("settings.php")
+require_once ("settings.php");
 $conn = @mysqli_connect($host,
 		$user,
 		$pwd,
