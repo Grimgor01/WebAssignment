@@ -126,6 +126,8 @@ $conn = @mysqli_connect($host,
 			
 			if ($attempts > 2){
 				echo "<p>Max amount of attempts reached dumbass.</p>";
+				
+				echo "<a href=\"index.php\"><input type=\"Submit\" value=\"Return to Page\"></a>";
 			}
 			
 			else{
@@ -140,6 +142,8 @@ $conn = @mysqli_connect($host,
                         echo "<p>Student No.: $studentNumber </p>";
                         echo "<p> Number of attempts: $attempts </p>";
                         echo "<p>You achieved a score of %$score</p>";
+				
+				echo "<a href=\"index.php\"><input type=\"Submit\" value=\"Return to Page\"></a>";
 			}
 			
 			else {
