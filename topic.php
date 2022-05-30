@@ -28,7 +28,10 @@
 		<h1>Streaming Media</h1>
 		</header> -->
 		
-		<nav id="navbar">
+<?php 
+        require 'menu.inc';
+        ?>
+		<!-- <nav id="navbar">
 			<ul>
 				<li><a href="index.php">Index</a></li>
 				<li><a class="active">Topic<span>&dtrif;</span></a>
@@ -50,7 +53,7 @@
 			<li><a href="#stlvst">Streaming vs Live</a></li>
 			<li><a href="#dev">Who Developed it?</a></li>
 			</ul>
-		</nav>
+		</nav> -->
 		
 		<aside id="content">
 		<section id="what">
