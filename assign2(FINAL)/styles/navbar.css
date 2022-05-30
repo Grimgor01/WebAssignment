@@ -1,0 +1,95 @@
+/* 
+filename: navbar.css
+author: Ryan Correia, Elishua Ma, Liam Crook, Senil Hansitha Ravindranath Gunawardena, Alexander Forster
+created:  26/03/2022
+last modified: 9/04/2022
+description: Stylesheet for Group Assignment 
+*/ 
+
+
+
+#navbar{
+	position:sticky;
+	z-index: 1;
+	top:0;
+	width:100%;
+	background: #242222;
+	height:74px;
+}
+#navbar ul{
+	list-style:none;
+	
+	padding:0;
+	margin:0;
+	position:absolute; left:50%;
+	transform:translateX(-50%);
+}
+#navbar ul li{
+	float:left;
+	margin-top:0px;
+	padding:0px 5px;
+	cursor:pointer;
+}
+#navbar ul li a{
+	width:100%;
+	color:white;
+	display:block;
+	text-decoration:none;
+	font-size: 20px;
+	text-align: center;
+	padding:25px 40px;
+	
+}
+
+#navbar ul li #quizs li a{
+	padding:25px 24px;
+}
+
+#navbar a:hover{
+	background:darkgray;
+}
+#navbar ul li #topics{
+	background:#242222;
+	transform:translateX(-138.5%)translateY(-2%);
+}
+#navbar ul li #quizs2 {
+	background:#242222;
+	transform:translateX(40.6%)translateY(-2%);
+}
+
+#navbar ul li #quizs{
+	background:#242222;
+	transform:translateX(-34.6%)translateY(-2%);
+}
+
+
+
+
+#navbar ul li ul li{
+	float:none;
+	padding:0px;
+}
+#navbar  ul  li ul{
+	display:none;
+}
+#navbar ul li:hover ul{
+	display:block;
+}
+
+#navbar a.active{
+	width:100%;
+	background-color:#f5f5f5;
+	color:black;
+}
+
+#navbar #quizs.active{
+	width:100%;
+	background-color:#f5f5f5;
+	color:black;
+}
+
+#navbar #quizs2.active{
+	width:100%;
+	background-color:#f5f5f5;
+	color:black;
+}
