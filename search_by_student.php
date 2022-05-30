@@ -15,7 +15,7 @@
         $err_msg = "";  
         
         if (empty($_POST["firstName"]) and empty($_POST["lastName"]) and empty($_POST["studentNumber"])) {
-            $err_msg .= "<p>Please enter at least student's ID or first name or last name to query from database.</p>"
+            $err_msg .= "<p>Please enter at least student's ID or first name or last name to query from database.</p>";
             header("location:manage.php");
             exit();
         }
