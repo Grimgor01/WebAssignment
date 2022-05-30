@@ -38,6 +38,7 @@
 				</li>
 				<li><a href="quiz.php">Quiz</a></li>
 				<li><a href="enhancements.html">Enhancements</a></li>
+				<li><a href="manage.php">Manage</a></li>
 			</ul>
 		</nav> 
 	
