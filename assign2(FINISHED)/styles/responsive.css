@@ -1,0 +1,196 @@
+/* 
+filename: responsive.css
+author: Ryan Correia, Elishua Ma, Liam Crook, Senil Hansitha Ravindranath Gunawardena, Alexander Forster
+created:  26/03/2022
+last modified: 9/04/2022
+description: Stylesheet for Group Assignment 
+*/ 
+
+
+@media only screen and (max-width: 1611px) {
+	#dev {
+		width: 100%;
+	}
+	#sidebar{
+	padding-bottom: 125%;
+	}
+	figure {
+	position:relative;
+	left: 50%;
+	transform:translateX(-50%);
+	width: 30%;
+	text-align:center;
+	float:left;
+	padding: 1em;
+}
+}
+@media only screen and (max-width: 1642px){
+	#sidebar{
+		padding-bottom: 130%;
+	}
+}
+	
+	
+@media only screen and (max-width:1520px){
+	#content{
+		width: 75%;
+}
+	#sidebar{
+		padding-bottom: 142%;
+	}
+}
+
+@media only screen and (max-width:1426px) {
+	#sidebar{
+		display: none;
+		
+	}
+	#content{
+		float:none;
+		margin:auto;
+	}
+	figure{
+		width:40%;
+	}
+	.toggle{
+		width: 100%;
+		padding-bottom: 1em;
+	}
+	
+		#navbar ul li{
+		padding:0px 10px;
+	}	
+		#navbar ul li a{
+		padding:25px 25px;
+		}
+	#navbar ul li ul{
+		transform:translateX(-147%);
+	}
+	
+	#navbar ul li #topics{
+	background:#242222;
+	transform:translateX(-145.5%)translateY(-2%);
+	}
+
+	#navbar ul li #quizs{
+		background:#242222;
+		transform:translateX(-30.6%)translateY(-2%);
+	}
+
+	#navbar ul li #quizs li a{
+		padding:25px 9px;
+	}
+	
+	
+}
+	
+@media only screen and (max-width:1376px){
+		#navbar ul li{
+		padding:0px 5px;
+	}	
+		#navbar ul li a{
+		padding:25px 10px;
+		}
+	#navbar ul li #topics{
+		transform:translateX(-155%);
+	}
+	#navbar ul li #quizs{
+		background:#242222;
+		transform:translateX(-47.6%)translateY(-2%);	
+	}	
+	#navbar ul li #quizs li a{
+		font-size: 15px;
+		padding:25px 6px;
+	}
+}
+
+@media only screen and (max-width:1050px){
+	.email a{
+	color:#fff;
+	text-decoration: none ;
+	padding:10px;
+    border: 0px;
+	display:inline-block;
+	
+}
+.email a:hover{
+	border: 0px;
+	text-decoration:underline;
+    margin: 0px;
+}
+}
+
+@media only screen and (max-width:1000px) {
+	header img{
+		display: none;
+	}
+	#navbar ul li{
+		padding:0px 0px;
+	}	
+	#navbar ul li #topics{
+		transform:translateX(-151%);
+	}
+	#navbar ul li #quizs{
+		background:#242222;
+		transform:translateX(-54.6%)translateY(-2%);	
+	}
+	
+}
+
+@media only screen and (max-width:897px){
+	
+	#navbar{
+		position:static;
+		top:0;
+		width:100%;
+		height: 280px;
+}
+	#navbar ul li{
+		
+		float:none;
+		
+	}
+	#navbar ul li a{
+		
+		padding: 25px 50em;
+		
+	}
+	#navbar ul li #topics{
+		transform:translateX(-50%);
+	}
+	#navbar ul li #quizs{
+		transform:translateX(-50%);
+	}
+	
+	#navbar ul li #topics li a{
+	padding:20px 25em;
+	}
+	
+	#navbar ul li #quizs li a{
+	font-size: 20px;	
+	padding:20px 25em;
+	}
+	
+	#remote{
+		display:none;
+	}
+	#indexc , #indexl{
+		float:none;
+		width:80%;
+		margin:auto;
+		margin-top: 1em;
+		margin-bottom: 1em;
+	}
+	#indexl img{
+		max-width: 10%;
+	}
+	#indexl a{
+		margin: 30px;
+		padding: 0px 1em;
+	}
+		#video{
+		text-align:center;
+		margin-left: 0%;
+		width: 100%;
+	}
+}

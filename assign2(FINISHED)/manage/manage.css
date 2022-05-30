@@ -1,0 +1,33 @@
+form {
+width: 40%;
+
+}
+
+#searchu{
+	margin-left: 9%;
+	float:left;
+}
+
+#editu{
+	margin-right: 30.7%;
+	float:right;
+}
+
+#edit {
+	position: relative; 
+	float: right;
+	margin-right: 8%;
+}
+
+#search {
+	position: relative; 
+	float: left;
+	margin-left: 8%;
+}
+
+#logoutbtn {
+	margin-left: 8%;
+	margin-top: 2%;
+	float:left;
+	clear:both;
+}
