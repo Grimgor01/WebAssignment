@@ -28,10 +28,7 @@
 		<h1>Streaming Media</h1>
 		</header> -->
 		
-<?php 
-        require 'menu.inc';
-        ?>
-		<!-- <nav id="navbar">
+		 <nav id="navbar">
 			<ul>
 				<li><a href="index.php">Index</a></li>
 				<li><a class="active">Topic<span>&dtrif;</span></a>
