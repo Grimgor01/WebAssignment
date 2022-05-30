@@ -59,6 +59,9 @@
 	<section id="video"><a href="https://www.youtube.com/watch?v=vg1_8mLkhq8">Demonstration Video</a>
 			<p>Note: The audio is very soft so turn up the volume!</p>
 			</section>
+	<section id="video"><a href="https://youtu.be/Ru0gJ5obypU">Demonstration Video V2</a>
+			<p>Note: The audio is very soft so turn up the volume!</p>
+			</section>
 	
     <p id="indexc"> Streaming Media is perhaps the most popular source of entertainment for much of the general public. Streaming Media refers to both the transmitting and receiving of audio or video data packets over a network in a continuous flow. The common forms of streaming media are Podcasts, Webcasts, Movies, Tv Shows and Music Videos.</p>
 	
