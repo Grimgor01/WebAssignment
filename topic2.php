@@ -28,7 +28,10 @@
 		</header> -->
 		
 		<!-- The navigation menu -->
-		<nav id="navbar">
+<?php 
+        require 'menu.inc';
+        ?>
+		<!-- <nav id="navbar">
 			<ul>
 				<li><a href="index.php">Index</a></li>
 				<li><a class="active">Topic<span>&dtrif;</span></a>
@@ -39,7 +42,7 @@
 				</li>
 				<li><a href="quiz.php">Quiz</a></li>
 				<li><a href="enhancements.html">Enhancements</a></li>
-			</ul>
+			</ul> -->
 		</nav>
 		
 		<nav id="sidebar">
