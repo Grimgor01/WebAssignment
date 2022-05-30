@@ -27,8 +27,11 @@
 		</a>
 		<h1>Streaming Media</h1>
 		</header> -->
-		
-		 <nav id="navbar">
+
+<?php
+  require 'menu.inc';
+     ?>	
+		<!-- <nav id="navbar">
 			<ul>
 				<li><a href="index.php">Index</a></li>
 				<li><a class="active">Topic<span>&dtrif;</span></a>
@@ -41,7 +44,7 @@
 				<li><a href="enhancements.html">Enhancements</a></li>
 				<li><a href="manage.php">Manage</a></li>
 			</ul>
-		</nav>
+		</nav> -->
 		
 		<nav id="sidebar">
 			<ul>
