@@ -22,8 +22,10 @@
      ?>
 		
 		
-		
- <nav id="navbar">
+<?php 
+        require 'menu.inc';
+        ?>		
+<!-- <nav id="navbar">
 			<ul>
 				<li><a href="index.php">Index</a></li>
 				<li><a>Topic<span>&dtrif;</span></a>
@@ -35,7 +37,7 @@
 				<li><a class="active" href="quiz.php">Quiz</a></li>
 				<li><a href="enhancements.html">Enhancements</a></li>
 			</ul>
-		</nav>
+		</nav> -->
 	
 		
 		
