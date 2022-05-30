@@ -41,7 +41,7 @@
 	
 		
 		
-        <form id="appForm" method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
+        <form id="appForm" method="post" action="markquiz.php">
             <!--Note we have to use a special escape character to print an apostrophe on the Web page -->
             
             <fieldset>
