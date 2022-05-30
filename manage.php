@@ -10,6 +10,12 @@
     <body>
         <h1> Manager </h1>
         <?php 
+        require 'header.inc';
+        ?>
+<?php 
+        require 'menu.inc';
+        ?>
+        <?php 
 
             $err_msg = "";         
 
@@ -151,5 +157,8 @@
             </fieldset>
 
         </form>
+        <?php 
+        require 'footer.inc';
+        ?>
     </body>
 </html>
