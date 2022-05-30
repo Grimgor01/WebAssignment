@@ -12,9 +12,7 @@
         <?php 
         require 'header.inc';
         ?>
-<?php 
-        require 'menu.inc';
-        ?>
+       
         <?php 
 
             $err_msg = "";         
